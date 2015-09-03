@@ -1,0 +1,24 @@
+{
+  "name": "nest-intv",
+  "version": "1.0.0",
+  "description": "Nest Interview API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --harmony server.js",
+    "test": "jasmine-node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.a13e.com:steve/nest-intv.git"
+  },
+  "author": "Steve Paulo <spaulo@nestlabs.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "winston": "^1.0.1"
+  },
+  "devDependencies": {
+    "frisby": "^0.8.5"
+  }
+}
