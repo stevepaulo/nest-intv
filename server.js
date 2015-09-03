@@ -2,11 +2,13 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 const app = express();
 const router = express.Router();
 const port = process.env.PORT || 8012;
 const logger = require('./logger');
 
+app.use(compression());
 app.use(bodyParser.json());
 
 const colors = ['blue', 'red', 'green', 'orange', 'yellow', 'purple', 'pink', 'brown', 'black', 'white', 'gray'];
