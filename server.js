@@ -17,6 +17,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 function generateResponse(maxDepth) {
+  maxDepth = maxDepth || 0;
   let returnArr = [];
   let thisRequestsProductNames = JSON.parse(JSON.stringify(products));
   let members = getRandomIntInclusive(1, 10);
@@ -39,7 +40,7 @@ function generateResponse(maxDepth) {
 }
 
 router.get('/v1/products', (req, res) => {
-  res.status(200).json({products: generateResponse(0)});
+  res.status(200).json({products: generateResponse()});
 });
 
 router.get('/v2/products', (req, res) => {
