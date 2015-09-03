@@ -16,31 +16,34 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function generate(depth) {
-  let returnObj = {products: []};
-  if (depth > 1) {
-
-  } else {
-    let thisRequestsProductNames = JSON.parse(JSON.stringify(products));
-    let members = getRandomIntInclusive(1, 10);
-    for (let i = 0; i < members; ++i) {
-      returnObj.products.push({});
-      let thisMembersColorsArray = JSON.parse(JSON.stringify(colors));
-      let arrSize = getRandomIntInclusive(1, 5);
-      returnObj.products[i].name = thisRequestsProductNames.splice(getRandomIntInclusive(0, (thisRequestsProductNames.length - 1)), 1)[0];
-      returnObj.products[i].price = getRandomIntInclusive(0, 1000);
-      returnObj.products[i].inStock = (i % 2 === 0) ? true : false;
-      returnObj.products[i].availableColors = [];
-      for (let j = 0; j < arrSize; ++j) {
-        returnObj.products[i].availableColors.push(thisMembersColorsArray.splice(getRandomIntInclusive(0, (thisMembersColorsArray.length - 1)), 1)[0]);
-      }
+function generateResponse(maxDepth) {
+  let returnArr = [];
+  let thisRequestsProductNames = JSON.parse(JSON.stringify(products));
+  let members = getRandomIntInclusive(1, 10);
+  for (let i = 0; i < members; ++i) {
+    returnArr.push({});
+    let thisMembersColorsArray = JSON.parse(JSON.stringify(colors));
+    let arrSize = getRandomIntInclusive(1, 5);
+    returnArr[i].name = thisRequestsProductNames.splice(getRandomIntInclusive(0, (thisRequestsProductNames.length - 1)), 1)[0];
+    returnArr[i].price = getRandomIntInclusive(0, 1000);
+    returnArr[i].inStock = (i % 2 === 0) ? true : false;
+    returnArr[i].availableColors = [];
+    for (let j = 0; j < arrSize; ++j) {
+      returnArr[i].availableColors.push(thisMembersColorsArray.splice(getRandomIntInclusive(0, (thisMembersColorsArray.length - 1)), 1)[0]);
+    }
+    if (maxDepth) {
+      returnArr[i].relatedProducts = generateResponse(maxDepth - 1);
     }
   }
-  return returnObj;
+  return returnArr;
 }
 
 router.get('/v1/products', (req, res) => {
-  res.status(200).json(generate(1));
+  res.status(200).json({products: generateResponse(0)});
+});
+
+router.get('/v2/products', (req, res) => {
+  res.status(200).json({products: generateResponse(2)});
 });
 
 router.get('/heartbeat', (req, res) => res.status(200).json({ message: 'OK' }));
