@@ -27,6 +27,7 @@ function generateResponse(maxDepth) {
     returnArr.push({});
     let thisMembersColorsArray = JSON.parse(JSON.stringify(colors));
     let arrSize = getRandomIntInclusive(1, 5);
+    let relatedProducts = getRandomIntInclusive(0, maxDepth);
     returnArr[i].name = thisRequestsProductNames.splice(getRandomIntInclusive(0, (thisRequestsProductNames.length - 1)), 1)[0];
     returnArr[i].price = getRandomIntInclusive(0, 1000);
     returnArr[i].inStock = (i % 2 === 0) ? true : false;
@@ -34,7 +35,7 @@ function generateResponse(maxDepth) {
     for (let j = 0; j < arrSize; ++j) {
       returnArr[i].availableColors.push(thisMembersColorsArray.splice(getRandomIntInclusive(0, (thisMembersColorsArray.length - 1)), 1)[0]);
     }
-    if (maxDepth) {
+    if (relatedProducts) {
       returnArr[i].relatedProducts = generateResponse(maxDepth - 1);
     }
   }
