@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.a13e.com:steve/nest-intv.git"
+    "url": "git@github.com:stevepaulo/nest-intv.git"
   },
   "author": "Steve Paulo <spaulo@nestlabs.com>",
   "license": "UNLICENSED",
