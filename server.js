@@ -10,9 +10,7 @@ const logger = require('./logger');
 const colors = ['blue', 'red', 'green', 'orange', 'yellow', 'purple', 'pink', 'brown', 'black', 'white', 'gray'];
 const products = ['thing', 'widget', 'sprocket', 'item', 'device', 'product', 'accessory', 'gadget', 'doohickey', 'whatsit'];
 
-const getRandomIntInclusive = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+const getRandomIntInclusive = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const generateResponse = maxDepth => {
   maxDepth = maxDepth || 0;
