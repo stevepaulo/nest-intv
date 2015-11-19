@@ -41,6 +41,11 @@ router.get('/v1/products', (req, res) => res.status(200).json({products: generat
 router.get('/v2/products', (req, res) => res.status(200).json({products: generateResponse(2)}));
 router.get('/heartbeat', (req, res) => res.status(200).json({ message: 'OK' }));
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use(compression());
 app.use(bodyParser.json());
 app.use('/api', router);
