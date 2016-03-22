@@ -2,8 +2,8 @@
 
 var frisby = require('frisby');
 
-frisby.create('Get heartbeat')
-  .get('http://localhost:8012/api/heartbeat')
+frisby.create('Health check')
+  .get('http://localhost:8012/api/health')
   .expectStatus(200)
   .toss();
 
