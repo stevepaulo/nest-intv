@@ -12,7 +12,7 @@
     "url": "git@github.com:stevepaulo/nest-intv.git"
   },
   "author": "Steve Paulo <spaulo@nestlabs.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
