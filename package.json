@@ -1,7 +1,7 @@
 {
-  "name": "nest-intv",
+  "name": "rando-api",
   "version": "1.0.0",
-  "description": "Nest Interview API",
+  "description": "Random API response generator",
   "main": "server.js",
   "scripts": {
     "start": "node --harmony server.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git@github.com:stevepaulo/nest-intv.git"
   },
-  "author": "Steve Paulo <spaulo@nestlabs.com>",
+  "author": "Steve Paulo <stevepaulo@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.13.3",
