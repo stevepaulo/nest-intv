@@ -4,12 +4,15 @@
   "description": "Random API response generator",
   "main": "server.js",
   "scripts": {
-    "start": "node --harmony server.js",
+    "start": "node server.js",
     "test": "jasmine-node ."
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:stevepaulo/nest-intv.git"
+  },
+  "engines": {
+    "node": "4.x"
   },
   "author": "Steve Paulo <stevepaulo@gmail.com>",
   "license": "MIT",
