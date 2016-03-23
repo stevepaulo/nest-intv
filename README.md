@@ -6,7 +6,7 @@ Random API response generator
 1. `npm i`
 2. `npm start`
 
-Rando-api has all the necessary pieces to be deployed to Heroku and shouldn't need any configuration to do so.
+rando-api has all the necessary pieces to be deployed to Heroku and shouldn't need any configuration to do so.
 
 # Usage
 
