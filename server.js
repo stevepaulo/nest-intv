@@ -113,6 +113,6 @@ app.use((req, res, next) => {
 app.use(compression());
 app.use(bodyParser.json());
 app.use('/api', router);
-app.use((req, res, next) => res.status(404).json({ message: '404: Not Found' }));
+app.use((req, res, next) => res.status(404).send('404: Not Found'));
 
 app.listen(port, () => logger.info('Express server listening on port ' + port + ' in ' + process.env.NODE_ENV + ' mode.'));
