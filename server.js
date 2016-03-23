@@ -103,7 +103,7 @@ const generateResponse = (maxDepth, randomizeProperties) => {
 router.get('/v1/products', (req, res) => res.status(200).json({products: generateResponse(0, false)}));
 router.get('/v2/products', (req, res) => res.status(200).json({products: generateResponse(0, true)}));
 router.get('/v3/products', (req, res) => res.status(200).json({products: generateResponse(2, true)}));
-router.get('/health', (req, res) => res.status(200).json({ message: 'OK' }));
+router.get('/health', (req, res) => res.status(200).send('OK');
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
