@@ -9,7 +9,7 @@ const port = process.env.PORT || 8012;
 const logger = require('./logger');
 const colors = ['blue', 'red', 'green', 'orange', 'yellow', 'purple', 'pink', 'brown', 'black', 'white', 'gray'];
 const names = ['thing', 'widget', 'sprocket', 'item', 'device', 'product', 'accessory', 'gadget', 'doohickey', 'whatsit'];
-const origins = ['united states', 'mexico', 'canada', 'china', 'japan', 'korea', 'united kingdom', 'france', 'germany', 'morocco'];
+const origins = ['mexico', 'norway', 'germany', 'china', 'italy', 'united states', 'japan', 'morocco', 'france', 'united kingdom', 'canada'];
 const props = [
   {
     name: 'name',
