@@ -91,10 +91,10 @@ const generateResponse = (maxDepth, randomizeProperties) => {
           thisProduct[prop.name] = getRandomIntInclusive(1, 1000);
       }
     });
-    if (thisProduct['quantity'] && thisProduct['quantity'] === 0) {
+    if (thisProduct['inStock'] && thisProduct['quantity'] && thisProduct['quantity'] === 0) {
       thisProduct['inStock'] = false;
     }
-    if (thisProduct['inStock'] && thisProduct['inStock'] === false) {
+    if (thisProduct['quantity'] && thisProduct['inStock'] && thisProduct['inStock'] === false) {
       thisProduct['quantity'] = 0
     }
     returnArr.push(thisProduct);
